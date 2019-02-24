@@ -1,14 +1,18 @@
 from tkinter import *
 
 
-class Application:
+class App(Frame):
     def __init__(self, master):
+        Frame.__init__(self, master)
         self.master = master
-        master.title = "Annoying GUI"
+        self.pack()
+        self.create_widgets()
+    
+    def create_widgets(self):
+        self.hello = Label(self, text="This GUI will annoy you!")
+        self.hello.pack()
 
-        self.label = Label(master, text="This GUI will be annoying.")
-        self.label.pack()
-
+    
 root = Tk()
-gui = Application(root)
-root.mainloop()
+app = App(root)
+app.mainloop()
