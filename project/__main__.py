@@ -1,3 +1,4 @@
+#!/usr/bin/python
 from tkinter import *
 
 from .apps.calc import Calculator
@@ -7,6 +8,8 @@ class Home(Frame):
     def __init__(self, master):
         Frame.__init__(self, master)
         self.master = master
+        self.master.title("Annoying GUI")
+        self.master.geometry("400x400")
         self.pack()
         self.create_widgets()
     
@@ -19,13 +22,13 @@ class Home(Frame):
 
     def open_calculator(self):
         self.newWindow = Toplevel(self.master)
+        self.newWindow.title("Annoying Calculator")
+        self.newWindow.geometry("400x400")
         self.app = Calculator(self.newWindow)
 
 
 def main():
     root = Tk()
-    root.title("Annoying GUI")
-    root.geometry("400x400")
     app = Home(root)
     app.mainloop()
 
